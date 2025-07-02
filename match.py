@@ -18,18 +18,19 @@ def match_makers_to_requesters(makers, requesters):
     return matches
 
 
-if __name__ == "__main__":
-    makers = [
-        KimchiMaker("Alice", "Tokyo"),
-        KimchiMaker("Bob", "Osaka"),
-        KimchiMaker("Charlie", "Tokyo"),
-    ]
+def collect_people(klass, role):
+    people = []
+    count = int(input(f"Enter number of {role}: "))
+    for i in range(count):
+        name = input(f"{role.capitalize()} #{i+1} name: ")
+        location = input(f"{role.capitalize()} #{i+1} location: ")
+        people.append(klass(name, location))
+    return people
 
-    requesters = [
-        KimchiRequester("Dave", "Tokyo"),
-        KimchiRequester("Eve", "Osaka"),
-        KimchiRequester("Frank", "Nagoya"),
-    ]
+
+if __name__ == "__main__":
+    makers = collect_people(KimchiMaker, "makers")
+    requesters = collect_people(KimchiRequester, "requesters")
 
     matches = match_makers_to_requesters(makers, requesters)
 

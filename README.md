@@ -6,10 +6,10 @@ The script defines two simple classes (`KimchiMaker` and `KimchiRequester`) and 
 
 ## Usage
 
-Run the script with Python 3:
+Run the script with Python 3. You will be asked for the number of makers and requesters and their names and locations.
 
 ```bash
 python3 match.py
 ```
 
-The script will print out example matches between makers and requesters located in the same city.
+After entering the information, the program shows matches between makers and requesters in the same city.
