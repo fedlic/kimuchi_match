@@ -3,6 +3,7 @@ class KimchiMaker:
         self.name = name
         self.location = location
 
+
 class KimchiRequester:
     def __init__(self, name, location):
         self.name = name
