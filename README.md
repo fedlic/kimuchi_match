@@ -1,15 +1,29 @@
 # kimuchi_match
 
-This repository contains a simple Python script that demonstrates a basic matching service for people who make kimchi and those who would like to request it.
+A dependency-free Python prototype that matches kimchi makers and requesters by location.
 
-The script defines two simple classes (`KimchiMaker` and `KimchiRequester`) and matches them based on shared locations.
+## Command-line demo
 
-## Usage
-
-Run the script with Python 3:
+Run the script with Python 3 and enter makers and requesters when prompted:
 
 ```bash
 python3 match.py
 ```
 
-The script will print out example matches between makers and requesters located in the same city.
+Locations are compared case-insensitively after surrounding whitespace is removed.
+
+## Local web interface
+
+Start the local-only WSGI server, then open <http://127.0.0.1:5050/>:
+
+```bash
+python3 web_server.py
+```
+
+Data is held only in memory and is cleared whenever the server stops. The built-in server is intended for local evaluation, not an internet-facing production deployment.
+
+## Tests
+
+```bash
+python3 -m unittest discover -s tests -v
+```
